@@ -27,10 +27,11 @@ def binary_search(arr, x):
 
 
 # Test array
-x = int(input())
-n=int(input())
+x = int(input("Enter element to search: "))
+n=int(input("Enter the number of elements: "))
 arr=[]
 for k in range(0,n):
+    print("Write the corresponding element of array")
     arr.insert(k,int(input()))
 
 # Function call
