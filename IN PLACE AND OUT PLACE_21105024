@@ -88,7 +88,7 @@ int main(){
 /*
 [ANS.3]
 In-place techniques have lesser space complexity but are difficult to 
-apply in algorithm whereas out-place techniques are easy to aplly but 
+apply in algorithm whereas out-place techniques are easy to apply but 
 increases the space complexity of algorithm.
 For example if we want to reverse an array then its in-place algorithm
 will be swaping the first and last element of array until we reach the 
