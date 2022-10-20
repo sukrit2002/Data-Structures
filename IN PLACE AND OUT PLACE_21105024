@@ -97,6 +97,10 @@ algorithm we have to create one extra array of same size and copy
 elements of original array from back to the front of new array,this 
 algorith increases the space complexity to O(n) as we have creaed an 
 extra array.
+An in-place algorithm is an algorithm which transforms input using no auxiliary data structure. 
+However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes.
+ An in-place algorithm updates its input sequence only through replacement or swapping of elements.
 IN-PLACE algorithm are used in Bubble sort, Selection Sort, Insertion Sort, Heapsort.
-NOT IN-PLACE or Out-Place algorithm is used in Merge Sort, Because merge sort requires O(n) extra space.
+NOT IN-PLACE or OUT-PLACE algorithm is used in Merge Sort, Because merge sort requires O(n) extra space.
+An out-of-place sorting algorithm needs extra space to put the elements in as it's sorting them. Usually this means O(n) extra space.
 */
