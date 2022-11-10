@@ -1,0 +1,93 @@
+\\Sukrit Malhotra,21105024,ECE
+\\Following is the coding implementation of Bubble Sort and Selection Sort:
+\\Code to implement Selection Sort
+def Selection_Sort(arr, n):
+	
+	for i in range(n - 1):
+		min_index = i
+		
+		for j in range(i + 1, n):
+			if (arr[j] < arr[min_index]):
+				min_index = j
+				
+		arr[i], arr[min_index] = arr[min_index], arr[i]
+	
+print("The Sorted Array by using " \
+	"Selection Sort is : ", end = '')
+for i in range(n):
+	print(arr[i], end = " ")
+
+
+\\Code to implement Bubble Sort
+def Bubble_Sort(arr, n):
+	for i in range(1, n):
+		for j in range(0, n - i):
+			if (arr[j] > arr[j + 1]):
+				arr[j], arr[j + 1] = arr[j + 1], arr[j]
+				
+	return arr
+	
+
+print("The Sorted Array by using Bubble Sort is : ", end = '')
+for i in range(n):
+	print(arr[i], end = " ")
+
+
+
+In case of Selection Sort,comparisons requred for ith iteration will be (n-i) comparisons as it check for the minimum element in a sub-array. 
+and therefore the total number of comparisons in case of Selection Sort will be (n-1)+(n-2)+(n-3)+.....1
+For example in case  The total number of comparisons required to sort n=5 elements are (n-1) +(n-2) +(n-3) +(n-4).
+From our example n= 5, no. of comparisons is 4+3+2+1 = 10.
+
+In case of Bubble Sort,Bubble sort algorithm requires a pair of nested loops.
+The outer loop must iterate once for each element for the given elements i.e, n times.
+while the inner loop iterates n times for first iteration , n-1 times for second iteration , n-2 times for third iteration
+Total number of comparisons in bubble sort is (n - 1) + (n - 2) + (n-3) +(n-4) +(n-5) ….....(2) + (1) = n*(n - 1)/2 i.e, n^2
+
+
+
+
+Selection sort performs (at most) n – 1 swaps between data elements,when in no position does the minimum element the first one in a sub-array.
+while the bubble sort swaps n * (n – 1) / 2 elements in the worst case (when the list is sorted in reverse order).
+
+
+
+All algorithms can be classified into in-place and out-of-place algorithms based on the amount of extra space used by them
+An in-place algorithm transforms the input without using any extra memory. As the algorithm executes,
+the input is usually overwritten by the output, and no additional space is needed for this operation.
+An in-place algorithm may require a small amount of extra memory for its operation.
+However, the amount of memory required must not be dependent on the input size and should be constant.
+In case of Selection Sort only the minimum element in an array is found in an iteration and thus does not use any additional space.
+In case of Bubble Sort,only the elements are swapped in each pass if they are not in proper order and thus does not use any additional space.
+Therefore,both these algorithms require a constant amount of extra space for rearranging the elements in the input array and 
+both perform all computation in the original array and no other array is used and both are thus in-place algorithms.
+
+
+\*BONUS QUESTION*\
+
+Ans-\\In case of Bubble Sort,
+Bubble sort employs two loops: an inner loop and an outer loop.
+The inner loop performs O(n) comparisons deterministically.
+Worst Case:
+In the worst-case scenario, the outer loop runs O(n) times.
+As a result, the worst-case time complexity of bubble sort is O(n x n) = O(n x n)=O(n^2).
+Best Case:
+In the best-case scenario, the array is already sorted, but just in case, bubble sort performs O(n) comparisons.
+As a result, the time complexity of bubble sort in the best-case scenario is O(n).
+Average Case:
+Bubble sort may require (n/2) passes and O(n) comparisons for each pass in the average case.
+As a result, the average case time complexity of bubble sort is O(n/2 x n) = O(n^2).
+
+\\In case of Selection Sort,
+For selection sort we have to search the minimum and put it on the first place in the first iteration.
+In the second iteration we have to search the minimum in the non-sorted part of the array and put it to the second place and so on...
+We only know which element is the minimum after iterate till the end of the non-sorted part.
+Even if the array is sorted, we have to iterate till the end. Then you know for sure we found the minimum to put it on the right place (at the end of the already sorted part)
+So first iteration takes n steps to find the minimum. The second iteration takes n-1 steps
+to find the minimum in the non-sorted part ... The last iteration takes 1 step to find the minimum in the non-sorted part.
+After these steps we have an sorted array (even it was sorted before). Selection sort does not check if the array
+is already sorted by an linear-time algorithm. Selection sort repeatedly searches the minimum. 
+When we repeatedly search the minimum it takes n+(n-1)+...+1 so we get (n(n+1))/2 = (n²+n)/2 which is in O(n²) so in all the 
+possible cases i.e. in the worst,best and average cases the time complexity of Selection Sort is O(n^2).
+
+
