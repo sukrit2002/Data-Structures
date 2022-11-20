@@ -1,0 +1,52 @@
+\\SUKRIT MALHOTRA 21105024 ECE
+\\Deleting a node from BST
+
+# Deleting a node
+def deleteNode(root, key):
+
+    # Return if the tree is empty
+    if root is None:
+        return root
+
+    # Find the node to be deleted
+    if key < root.key:
+        root.left = deleteNode(root.left, key)
+    elif(key > root.key):
+        root.right = deleteNode(root.right, key)
+    else:
+        # If the node is with only one child or no child
+        if root.left is None:
+            temp = root.right
+            root = None
+            return temp
+
+        elif root.right is None:
+            temp = root.left
+            root = None
+            return temp
+
+        # If the node has two children,
+        # place the inorder successor in position of the node to be deleted
+        temp = minValueNode(root.right)
+
+        root.key = temp.key
+
+        # Delete the inorder successor
+        root.right = deleteNode(root.right, temp.key)
+
+    return root
+    
+    \\Deleting a value(node) from array
+    \\In order to delete a value from an array just use the function ->array.pop(index)
+    
+    \\Space complexity for BST is O(n) as The space complexity of deleting a node in a BST would be O(n) with 'n' being 
+    the depth of the tree(number of nodes present in a tree) since at any point of time maximum number of stack frames that could be present in memory is 'n'.
+    
+    \\Space complexity for deletion in an array is O(n-1) as if the first element in an array has to be deleted 
+    then we have to shift the remaining n-1 elements each to one position left.
+    
+    \\As space complexity of both deletion in an array and BST in worst case is O(n) therefore both are equally good in worst case.Space complexity of a binary search tree on average
+    is O(logn) as on average there are at most log(n) calls in the recursion stack. Avearge Space complexity of deletion in array is O(n) only.Therefore in my opinion,
+    BST is better in average space complexity case.
+    
+   
